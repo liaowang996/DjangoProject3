@@ -20,7 +20,8 @@ res01 = ssesion.get(url = hosts+'/api/login',
                      headers = headers
                      ,params = get_params
                      )
-print(res01.json())
+print(res01.status_code)
+
 
 
 
