@@ -6,11 +6,18 @@
 2、测试报告（到企业微信、钉钉、微信）机器人；
 
 python +unitest+requests
-
 python + unitest + requests + excel
-
 python + unitest + requests + mysql
 
 挑战
 
 python + uniteset + requests + 网页平台(django\flask)
+
+结合公司业务场景：
+1.测试数据如何造？
+（1）导入Faker
+（2）造数据并且要导入到excel中
+2、测试环境如何还原？
+（1）数据清洗？---微软造数据工具？？？
+
+Mock？？？如何使用

@@ -1,20 +1,23 @@
 import xlrd
 import os
-
+import psutil
+from xlutils.copy import copy
+from common import config
 
 class ExcelUtils():
     def __init__(self, file_path, sheet_name):
         self.file_path = file_path
+        self.wb = xlrd.open_workbook(self.file_path, formatting_info=True)
         self.sheet_name = sheet_name
         self.sheet = self.get_sheets()
         # 缓存合并单元格信息，避免重复计算
         self.merged_cells = self.get_merged_info()
 
+
     def get_sheets(self):
         """获取指定的工作表对象"""
         try:
-            wb = xlrd.open_workbook(self.file_path)
-            sheet = wb.sheet_by_name(self.sheet_name)
+            sheet = self.wb.sheet_by_name(self.sheet_name)
             return sheet
         except FileNotFoundError:
             raise Exception(f"文件不存在: {self.file_path}")
@@ -78,24 +81,59 @@ class ExcelUtils():
                 # 使用首行的值作为键，当前单元格的值作为值
                 row_dict[first_row[col]] = self.get_merged_cell_value_from_cell(row, col)
             alldata_list.append(row_dict)
-
         return alldata_list
 
+    def update_excel_data(self,row_id,col_id,content):
+        new_workbook = copy(self.wb)
+        sheet = new_workbook.get_sheet(self.wb.sheet_names().index(self.sheet_name))
+        sheet.write(row_id, col_id, content)
+        new_workbook.save(self.file_path)
 
+    def clear_excel_colum(self,start_id,end_id,col_id):
+        new_workbook = copy(self.wb)
+        sheet = new_workbook.get_sheet(self.wb.sheet_names().index(self.sheet_name))
+        for row_id in range(start_id,end_id):
+            sheet.write(row_id, col_id, '')
+        new_workbook.save(self.file_path)
+
+    #结束文件打开没关闭的操作
+    def force_close_file(file_path):
+        file_path = os.path.abspath(file_path)
+        for proc in psutil.process_iter(['pid', 'name', 'open_files']):
+            try:
+                for file in proc.info['open_files'] or []:
+                    if file_path in file.path:
+                        print(f"发现占用进程：{proc.info['name']} (PID: {proc.info['pid']})")
+                        proc.terminate()  # 终止进程
+                        print(f"已关闭进程 {proc.info['pid']}")
+                        return True
+            except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+                pass
+        return False
 if __name__ == '__main__':
-    try:
-        current_path = os.path.dirname(os.path.realpath(__file__))
-        excel_path = os.path.join(current_path, '..', 'samples/data/test_demo.xlsx')
-        # 确保路径正确解析
-        excel_path = os.path.abspath(excel_path)
 
-        excel_utils = ExcelUtils(excel_path, 'Sheet1')
-        print("工作表数据:")
-        for row in excel_utils.get_sheet_data_by_dict():
-            print(row)
+    current_path = os.path.dirname(os.path.realpath(__file__))
+    excel_path = os.path.join(current_path, '..', 'samples/data/test_demo.xls')
+    excel = ExcelUtils(excel_path, 'Sheet1')
+    # e.update_excel_data(1,14,'111')
+    print(excel.sheet.row(0)[13].value)
+    for i in range(len(excel.sheet.row(0))):
+        if excel.sheet.row(0)[i] == '测试结果':
+            break
+    print(i)
 
-        # 示例：获取第3行第4列的值（索引从0开始）
-        print("\n指定单元格的值:")
-        print(excel_utils.get_merged_cell_value_from_cell(2, 3))
-    except Exception as e:
-        print(f"发生错误: {str(e)}")
+
+    #     # 确保路径正确解析
+    #     excel_path = os.path.abspath(excel_path)
+    #
+    #     excel_utils = ExcelUtils(excel_path, 'Sheet1')
+    #     print("工作表数据:")
+    #     for row in excel_utils.get_sheet_data_by_dict():
+    #         print(row)
+    #
+    #     # 示例：获取第3行第4列的值（索引从0开始）
+    #     print("\n指定单元格的值:")
+    #     print(excel_utils.get_merged_cell_value_from_cell(2, 3))
+    # except Exception as e:
+    #     print(f"发生错误: {str(e)}")
+#

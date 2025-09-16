@@ -6,7 +6,7 @@ from requests.exceptions import RequestException
 from requests.exceptions import ConnectionError
 from common import config
 from common.check_utils import CheckUtils
-
+from common.testdata_utils import TestdataUtils
 
 class RequestsUtils():
 
@@ -105,7 +105,10 @@ class RequestsUtils():
         for step_info in step_infos:
             temp_result = self.request(step_info)
             if temp_result['code'] != 0:
+                TestdataUtils().write_result_to_excel(step_info['测试用例编号'],step_info['测试用例步骤'],'失败')
                 break
+            else:
+                TestdataUtils().write_result_to_excel(step_info['测试用例编号'],step_info['测试用例步骤'],'通过')
         return temp_result
 
 if __name__ == "__main__":

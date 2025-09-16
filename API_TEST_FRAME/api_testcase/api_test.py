@@ -6,8 +6,8 @@ from common.testdata_utils import TestdataUtils
 from common.requests_utils import RequestsUtils
 
 
-# case_infos = TestdataUtils().def_testcase_data_list()
-case_infos = TestdataUtils().def_testcase_data_list_by_mysql()
+case_infos = TestdataUtils().def_testcase_data_list()
+#case_infos = TestdataUtils().def_testcase_data_list_by_mysql()
 @paramunittest.parametrized(
     *case_infos
 )
