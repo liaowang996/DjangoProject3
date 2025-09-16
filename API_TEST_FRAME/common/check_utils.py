@@ -14,24 +14,24 @@ class CheckUtils():
         }
         self.pass_result = {
             'code':0 ,#请求是否成功的标志位
-            'response_reason':self.check_response.reason,
-            'response_code':self.check_response.status_code,
-            'response_headers':self.check_response.headers,
-            'reponse_body':self.check_response.text,
+            'response_reason':self.ck_response.reason,
+            'response_code':self.ck_response.status_code,
+            'response_headers':self.ck_response.headers,
+            'reponse_body':self.ck_response.text,
             'check_result':True,
             'message':''#扩展座位日志输出等
         }
         self.fail_result ={
             'code':2 ,#请求是否成功的标志位
-            'response_reason':self.check_response.reason,
-            'response_code':self.check_response.status_code,
-            'response_headers':self.check_response.headers,
-            'reponse_body':self.check_response.text,
+            'response_reason':self.ck_response.reason,
+            'response_code':self.ck_response.status_code,
+            'response_headers':self.ck_response.headers,
+            'reponse_body':self.ck_response.text,
             'check_result': False,
             'message': ''
         }
 
-    def no_check(self):
+    def no_check(self,check_data=None):
         return self.pass_result
 
     #检查key
@@ -46,13 +46,9 @@ class CheckUtils():
             else:
                 reslist.append(self.fail_result)
                 wrongkey.append(check_data)
-        # print(reslist)
-        # print(wrongkey)
         if self.fail_result in reslist:
-            # print("缺少key：", wrongkey)
             return self.fail_result
         else:
-            # print("检查key成功")
             return self.pass_result
 
     #检查key和value
@@ -66,20 +62,16 @@ class CheckUtils():
                 res_list.append(self.fail_result)
                 wrong_item.append(check_item)
         if self.fail_result in res_list:
-            print("缺少key：", wrong_item)
             return self.fail_result
         else:
-            print("检查key成功")
             return self.pass_result
 
     #正则匹配
     def check_rerexp(self,check_data=None):
         pattern = re.compile(check_data)
         if re.findall(pattern= pattern,string = self.ck_response.text):
-            print("正则匹配成功")
             return self.pass_result
         else:
-            print("正则匹配失败")
             return self.fail_result
 
     def run_check(self,check_type=None,check_data=None):

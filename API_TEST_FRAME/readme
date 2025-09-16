@@ -1,0 +1,16 @@
+优化点1：
+1、测试用例分开；
+2、不习惯每条用例都独立执行；
+优化点2：
+1、数据执行结果反写入excle
+2、测试报告（到企业微信、钉钉、微信）机器人；
+
+python +unitest+requests
+
+python + unitest + requests + excel
+
+python + unitest + requests + mysql
+
+挑战
+
+python + uniteset + requests + 网页平台(django\flask)
