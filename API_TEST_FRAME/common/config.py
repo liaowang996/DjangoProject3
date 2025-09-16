@@ -25,5 +25,16 @@ SMTP_PASSWORD = configUtils.read_value('email','SMTP_PASSWORD')
 SMTP_RECEIVER = configUtils.read_value('email','SMTP_RECEIVER')
 SMTP_SUBJECT = configUtils.read_value('email','SMTP_SUBJECT')
 SMTP_CC = configUtils.read_value('email','SMTP_CC')
+
+
+###################mysql配置##############
+MYSQL_DB_HOST = configUtils.read_value('mysql','MYSQL_DB_HOST')
+MYSQL_DB_PORT = configUtils.read_value('mysql','MYSQL_DB_PORT')
+MYSQL_DB_USER = configUtils.read_value('mysql','MYSQL_DB_USER')
+MYSQL_DB_PASSWORD = configUtils.read_value('mysql','MYSQL_DB_PASSWORD')
+MYSQL_DB_DATABASE = configUtils.read_value('mysql','MYSQL_DB_DATABASE')
+MYSQL_DB_CHARSET = configUtils.read_value('mysql','MYSQL_DB_CHARSET')
+
+
 if __name__ == '__main__':
     print(REPORT_PATH)
