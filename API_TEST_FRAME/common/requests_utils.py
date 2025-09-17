@@ -105,10 +105,11 @@ class RequestsUtils():
         for step_info in step_infos:
             temp_result = self.request(step_info)
             if temp_result['code'] != 0:
-                TestdataUtils().write_result_to_excel(step_info['测试用例编号'],step_info['测试用例步骤'],'失败')
+            #     TestdataUtils().write_result_to_excel(step_info['测试用例编号'],step_info['测试用例步骤'],'失败')
+            #     break
+            # else:
+            #     TestdataUtils().write_result_to_excel(step_info['测试用例编号'],step_info['测试用例步骤'],'通过')
                 break
-            else:
-                TestdataUtils().write_result_to_excel(step_info['测试用例编号'],step_info['测试用例步骤'],'通过')
         return temp_result
 
 if __name__ == "__main__":

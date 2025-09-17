@@ -1,0 +1,26 @@
+# 测试框架目录结构
+API_TEST_FRAME/
+├─ common/          # 公共工具模块
+│  ├─common_api.py       #公共接口模块
+│  ├─ requests_utils.py  # 接口请求工具
+│  ├─ testdata_utils.py  # 测试数据加载
+│  ├─ config.py           # 配置文件
+│  ├─ config_utils.py     # 配置文件读取
+│  ├─ email_utils.py      # 邮件
+│  ├─ excel_utils.py     # excel操作
+│  ├─ HTMLTestReportCN.py   # 测试报告
+│  ├─ sql_utils.py       # sql操作
+│  ├─ check_utils.py     # 断言
+│  └─ log_utils.py       # 日志配置
+├─ api_testcase/    # 接口测试模块
+│  └─api_test.py   # 接口测试用例
+├─ config/          # 配置文件
+│  └─ config.ini         # 环境、日志等配置
+├─ log/             #日志存放路径
+├─ tests_report/          #测试报告存放路径
+├─ test_data/        # 测试数据存放路径
+│  ├─ test_demo.xls  #excel测试用例
+│  └─ test_demo2.xls #excel测试用例
+├─ test_runner       # 运行测试用例
+│   └─run_case.py     #执行用例
+└─ nb_log_config.py    #日志配置
