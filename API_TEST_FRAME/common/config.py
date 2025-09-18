@@ -138,7 +138,7 @@ if __name__ == '__main__':
     # 测试配置加载
     print("=" * 50)
     print(f"当前环境: {current_env}")
-    print(f"API主URL: {API_URL}")
+    print(f"API主URL: {URL}")
     print(f"日志路径: {LOG_PATH}（级别: {LOG_LEVEL}）")
     print(f"MySQL地址: {MYSQL_DB_HOST}:{MYSQL_DB_PORT}（库: {MYSQL_DB_DATABASE}）")
     print("=" * 50)
