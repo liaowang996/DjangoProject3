@@ -24,7 +24,7 @@ def load_config(env='test_env'):
     # ------------------------------ 基础URL配置（支持多环境）------------------------------
     # 优先从环境变量读取，其次从配置文件读取，最后用默认值
     config_dict['URL'] = os.getenv('URL',
-                                   config_utils.read_value(env, 'URL', default='http://127.0.0.1:3000')
+                                   config_utils.read_value(env, 'URL', default='http://192.168.1.4:3000')
                                    )
     config_dict['URL1'] = os.getenv('URL1',
                                     config_utils.read_value(env, 'URL1', default='https://api.weixin.qq.com')
