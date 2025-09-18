@@ -90,7 +90,7 @@ class ExcelUtils():
             count = self.sheet.max_row
         else:
             count = self.sheet.nrows
-        logger.debug(f"工作表 '{self.sheet_name}' 行数: {count}")
+        # logger.debug(f"工作表 '{self.sheet_name}' 行数: {count}")
         return count
 
     def get_col_counts(self):
@@ -99,7 +99,7 @@ class ExcelUtils():
             count = self.sheet.max_column
         else:
             count = self.sheet.ncols
-        logger.debug(f"工作表 '{self.sheet_name}' 列数: {count}")
+        # logger.debug(f"工作表 '{self.sheet_name}' 列数: {count}")
         return count
 
     def __get_cell_value(self, row_index, col_index):
