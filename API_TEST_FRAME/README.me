@@ -1,4 +1,4 @@
-# 测试框架目录结构
+1、测试框架目录结构
 API_TEST_FRAME/
 ├─ common/          # 公共工具模块
 │  ├─common_api.py       #公共接口模块
@@ -25,8 +25,35 @@ API_TEST_FRAME/
 │   └─run_case.py     #执行用例
 └─ nb_log_config.py    #日志配置
 
+2、类与方法介绍：
+参考：DjangoProject3\API_TEST_FRAME\类、方法介绍.xls
 
-https://github.com/liaowang996/DjangoProject3.git/
+
+3、拓展：
+    优化点1：
+    1、测试用例分开；
+    2、不习惯每条用例都独立执行；
+    优化点2：
+    1、数据执行结果反写入excle
+    2、测试报告（到企业微信、钉钉、微信）机器人；
+
+    python +unitest+requests
+    python + unitest + requests + excel
+    python + unitest + requests + mysql
+
+    挑战
+    python + uniteset + requests + 网页平台(django\flask)
+    结合公司业务场景：
+    1.测试数据如何造？
+    （1）导入Faker
+    （2）造数据并且要导入到excel中
+    2、测试环境如何还原？
+    （1）数据清洗？---微软造数据工具？？？
+
+    Mock？？？如何使用
+    https://github.com/liaowang996/DjangoProject3.git/
 
 
-docker pull jenkins/jenkins:lts
+    docker pull jenkins/jenkins:lts
+
+
