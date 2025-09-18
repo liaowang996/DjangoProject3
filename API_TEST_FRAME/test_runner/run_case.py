@@ -1,92 +1,115 @@
 import os
 import unittest
-import logging
-from common import config, HTMLTestReportCN
+import datetime
+from common import config
+from common import HTMLTestReportCN
 from common.email_utils import EmailUtils
-from common.log_utils import logger  # 假设你有日志工具类
-
-# 配置路径处理
-current_path = os.path.dirname(__file__)
-test_case_path = os.path.join(current_path, '..', config.CASE_PATH)
-test_report_path = os.path.join(current_path, '..', config.REPORT_PATH)
-# 确保报告目录存在
-os.makedirs(test_report_path, exist_ok=True)
+from common.log_utils import logger
+# from common.test_report_generator_utils import TestReportGenerator  # 假设你有报告生成工具
 
 
 class RunCase():
     def __init__(self):
-        self.test_case_path = test_case_path
-        self.test_report_path = test_report_path
+        # 1. 路径配置（从config读取，避免硬编码）
+        self.test_case_path = config.CASE_PATH
+        self.test_report_root = config.REPORT_PATH
         self.title = '接口自动化测试报告'
-        self.description = '接口自动化测试报告详情'
+        self.description = f'接口自动化测试报告（环境：{os.getenv("TEST_ENV", "test_env")}）'
         self.tester = '测试-Liaowang'
 
-        # 验证测试用例目录是否存在
+        # 2. 验证必要目录
+        self._validate_dirs()
+
+    def _validate_dirs(self):
+        """验证目录存在性"""
         if not os.path.exists(self.test_case_path):
-            logger.error(f"测试用例目录不存在: {self.test_case_path}")
-            raise FileNotFoundError(f"测试用例目录不存在: {self.test_case_path}")
+            err_msg = f"测试用例目录不存在: {self.test_case_path}"
+            logger.error(err_msg)
+            raise FileNotFoundError(err_msg)
+        if not os.path.isdir(self.test_case_path):
+            err_msg = f"测试用例路径不是目录: {self.test_case_path}"
+            logger.error(err_msg)
+            raise IsADirectoryError(err_msg)
 
     def get_test_suite(self):
-        """收集测试用例，返回测试套件"""
+        """收集测试用例（支持按模块筛选）"""
         try:
             logger.info(f"开始收集测试用例，路径: {self.test_case_path}")
-            # 发现指定路径下所有符合模式的测试用例
+            # 发现用例（pattern支持通配符，如'test_*.py'）
             discover = unittest.defaultTestLoader.discover(
                 start_dir=self.test_case_path,
                 pattern='api_test.py',
                 top_level_dir=self.test_case_path
             )
-
             test_suite = unittest.TestSuite()
             test_suite.addTest(discover)
-
-            # 统计测试用例数量
-            test_count = test_suite.countTestCases()
-            logger.info(f"测试用例收集完成，共 {test_count} 个用例")
+            case_count = test_suite.countTestCases()
+            logger.info(f"用例收集完成，共 {case_count} 个用例")
             return test_suite
         except Exception as e:
-            logger.error(f"收集测试用例失败: {str(e)}", exc_info=True)
+            logger.error(f"用例收集失败: {str(e)}", exc_info=True)
             raise
+
+    def _get_report_path(self):
+        """生成报告路径（按时间戳命名，避免覆盖）"""
+        # 报告目录：根目录/报告标题_时间戳
+        timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+        report_dir_name = f"{self.title}_{timestamp}"
+        report_dir = os.path.join(self.test_report_root, report_dir_name)
+        os.makedirs(report_dir, exist_ok=True)
+
+        # 报告文件：目录/报告标题.html
+        report_file = os.path.join(report_dir, f"{self.title}.html")
+        logger.info(f"测试报告将保存至: {report_file}")
+        return report_file
 
     def run(self):
         """执行测试并生成报告"""
         try:
-            logger.info("开始执行接口自动化测试")
+            logger.info("=" * 60)
+            logger.info("开始接口自动化测试流程")
+            logger.info(f"测试环境: {os.getenv('TEST_ENV', 'test_env')}")
+            logger.info("=" * 60)
 
-            # 创建报告目录
-            report_dir = HTMLTestReportCN.ReportDirectory(self.test_report_path)
-            report_dir.create_dir(self.title)
-            report_file_path = HTMLTestReportCN.GlobalMsg.get_value('report_path')
+            # 1. 获取测试套件
+            test_suite = self.get_test_suite()
+            if not test_suite.countTestCases():
+                logger.warning("未收集到任何测试用例，终止测试")
+                return None
 
-            logger.info(f"测试报告将保存至: {report_file_path}")
+            # 2. 生成报告路径
+            report_file = self._get_report_path()
 
-            # 执行测试并生成报告
-            with open(report_file_path, 'wb') as fp:
+            # 3. 执行测试并生成报告
+            with open(report_file, 'wb') as fp:
                 runner = HTMLTestReportCN.HTMLTestRunner(
                     stream=fp,
                     title=self.title,
                     description=self.description,
                     tester=self.tester
                 )
-                result = runner.run(self.get_test_suite())
+                result = runner.run(test_suite)
 
-            # 记录测试结果统计
-            logger.info(f"测试执行完成: 共 {result.testsRun} 个用例，"
-                        f"成功 {result.success_count} 个，"
-                        f"失败 {len(result.failures)} 个，"
-                        f"错误 {len(result.errors)} 个")
+            # 4. 记录测试结果
+            logger.info("=" * 60)
+            logger.info("测试执行完成，结果统计:")
+            logger.info(f"总用例数: {result.testsRun}")
+            logger.info(f"通过: {result.success_count}")
+            logger.info(f"失败: {len(result.failures)}")
+            logger.info(f"错误: {len(result.errors)}")
+            logger.info("=" * 60)
 
-            return report_file_path
+            return report_file
         except Exception as e:
-            logger.error(f"测试执行过程中发生错误: {str(e)}", exc_info=True)
+            logger.error(f"测试执行异常: {str(e)}", exc_info=True)
             raise
 
-
-if __name__ == '__main__':
-
-
-    body_str = """
-    <!DOCTYPE html>
+    def generate_email_body(self, report_file):
+        """生成邮件正文（动态替换报告链接）"""
+        # 假设报告可通过HTTP访问（如部署到服务器），若无则显示本地路径
+        report_url = os.getenv('REPORT_URL', f"file://{report_file}")
+        body = f"""
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -94,136 +117,82 @@ if __name__ == '__main__':
     <title>测试完成通知</title>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* 基础样式重置，适配邮件客户端 */
-        body { 
-            margin: 0; 
-            padding: 0; 
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; 
-            background-color: #f7f9fc;
-            line-height: 1.5;
-        }
-        table { 
-            border-collapse: collapse; 
-            width: 100%; 
-            max-width: 600px; 
-            margin: 0 auto;
-        }
-        td { 
-            padding: 0; 
-        }
-        a { 
-            text-decoration: none; 
-        }
-        
-        /* 卡片样式 */
-        .email-container {
-            padding: 20px;
-        }
-        .notify-card {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-        
-        /* 内容区域 */
-        .card-content {
-            padding: 40px 30px;
-            text-align: center;
-        }
-        .success-icon {
-            color: #28a745;
-            font-size: 60px;
-            margin-bottom: 25px;
-        }
-        .main-title {
-            color: #2d3748;
-            font-size: 24px;
-            font-weight: 600;
-            margin: 0 0 15px 0;
-        }
-        .description {
-            color: #718096;
-            font-size: 16px;
-            margin: 0 0 30px 0;
-            line-height: 1.6;
-        }
-        
-        /* 按钮样式 */
-        .action-button {
-            display: inline-block;
-            background-color: #3182ce;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 12px 30px;
-            border-radius: 6px;
-            margin-bottom: 30px;
-            transition: background-color 0.2s ease;
-        }
-        .action-button:hover {
-            background-color: #2c5282;
-        }
-        
-        /* 页脚 */
-        .footer {
-            background-color: #f7fafc;
-            padding: 20px 30px;
-            text-align: center;
-            border-top: 1px solid #edf2f7;
-        }
-        .footer-text {
-            color: #a0aec0;
-            font-size: 12px;
-            margin: 0;
-        }
+        body {{ margin: 0; padding: 20px; font-family: 'Segoe UI', Roboto, sans-serif; background-color: #f7f9fc; line-height: 1.6; }}
+        .email-container {{ max-width: 600px; margin: 0 auto; }}
+        .notify-card {{ background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden; }}
+        .card-content {{ padding: 40px 30px; text-align: center; }}
+        .success-icon {{ color: #28a745; font-size: 60px; margin-bottom: 25px; }}
+        .main-title {{ color: #2d3748; font-size: 24px; font-weight: 600; margin: 0 0 15px 0; }}
+        .description {{ color: #718096; font-size: 16px; margin: 0 0 30px 0; }}
+        .action-button {{ display: inline-block; background-color: #3182ce; color: #fff; font-size: 16px; font-weight: 500; padding: 12px 30px; border-radius: 6px; text-decoration: none; transition: background-color 0.2s; }}
+        .action-button:hover {{ background-color: #2c5282; }}
+        .footer {{ background-color: #f7fafc; padding: 20px 30px; text-align: center; border-top: 1px solid #edf2f7; }}
+        .footer-text {{ color: #a0aec0; font-size: 12px; margin: 0; }}
+        .result-stat {{ margin: 20px 0; padding: 15px; background-color: #f7fafc; border-radius: 8px; text-align: left; }}
+        .stat-item {{ margin: 8px 0; font-size: 14px; color: #4a5568; }}
     </style>
 </head>
 <body>
-    <table class="email-container">
-        <tr>
-            <td>
-                <table class="notify-card">
-                    <!-- 卡片内容 -->
-                    <tr>
-                        <td class="card-content">
-                            <div class="success-icon">
-                                <i class="fa fa-check-circle"></i>
-                            </div>
-                            <h1 class="main-title">自动化测试已完成</h1>
-                            <p class="description">您提交的测试任务已顺利执行结束</p>
-                            <a href="#" class="action-button">查看详细报告</a>
-                        </td>
-                    </tr>
-                    <!-- 页脚 -->
-                    <tr>
-                        <td class="footer">
-                            <p class="footer-text">此邮件由自动化系统发送，无需回复</p>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+    <div class="email-container">
+        <table class="notify-card" width="100%">
+            <tr>
+                <td class="card-content">
+                    <div class="success-icon">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <h1 class="main-title">自动化测试已完成</h1>
+                    <p class="description">您提交的接口自动化测试任务已执行结束，以下是简要结果：</p>
+
+                    <div class="result-stat">
+                        <div class="stat-item"><strong>测试环境：</strong>{os.getenv('TEST_ENV', 'test_env')}</div>
+                        <div class="stat-item"><strong>总用例数：</strong>{self.get_test_suite().countTestCases()}</div>
+                        <div class="stat-item"><strong>报告生成时间：</strong>{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</div>
+                    </div>
+
+                    <a href="{report_url}" class="action-button" target="_blank">
+                        <i class="fa fa-file-text-o mr-2"></i>查看详细测试报告
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="footer">
+                    <p class="footer-text">此邮件由自动化测试系统发送，无需回复 | 报告路径：{report_file}</p>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
-    """
+        """
+        return body
+
+
+if __name__ == '__main__':
     try:
-        logger.info("===== 开始接口自动化测试流程 =====")
-        html_path = RunCase().run()
+        # 1. 执行测试
+        runner = RunCase()
+        report_file = runner.run()
+        if not report_file or not os.path.exists(report_file):
+            logger.error("测试报告生成失败，无法发送邮件")
+            exit(1)
 
-        # 发送邮件报告
-        if html_path and os.path.exists(html_path):
-            logger.info("开始发送测试报告邮件")
-            email_utils = EmailUtils(body_str, html_path)
-            if email_utils.send_email():
-                logger.info("测试报告邮件发送成功")
-            else:
-                logger.warning("测试报告邮件发送失败")
+        # 2. 生成邮件正文并发送
+        logger.info("开始准备测试报告邮件")
+        email_body = runner.generate_email_body(report_file)
+        email_utils = EmailUtils(
+            smtp_body=email_body,
+            smtp_attch_path=report_file  # 附件添加报告文件
+        )
+
+        # 3. 发送邮件（带重试）
+        if email_utils.send_email(retry=2):
+            logger.info("测试报告邮件发送成功")
         else:
-            logger.warning("测试报告文件不存在，无法发送邮件")
+            logger.error("测试报告邮件发送失败")
 
-        logger.info("===== 接口自动化测试流程结束 =====")
+        logger.info("=" * 60)
+        logger.info("接口自动化测试流程全部结束")
+        logger.info("=" * 60)
     except Exception as e:
-        logger.critical(f"测试流程发生致命错误: {str(e)}", exc_info=True)
+        logger.critical(f"测试流程致命错误: {str(e)}", exc_info=True)
         exit(1)

@@ -99,60 +99,126 @@ class EmailUtils():
             logger.error(f"构建邮件内容失败: {str(e)}", exc_info=True)
             raise
 
-    def send_email(self):
-        """发送邮件"""
+    def send_email(self, retry=2):
+        """
+        发送邮件（支持重试）
+        :param retry: 重试次数，默认2次
+        :return: 发送成功返回True，失败返回False
+        """
         smtp = None
-        try:
-            # 建立连接
-            logger.info(f"开始连接邮件服务器: {self.smtp_server}:{self.smtp_port}")
-            smtp = smtplib.SMTP_SSL(
-                self.smtp_server,
-                self.smtp_port,
-                local_hostname='localhost'
-            )
+        for attempt in range(retry + 1):  # 0~retry，共retry+1次尝试
+            try:
+                # 1. 建立连接
+                logger.info(f"第{attempt + 1}/{retry + 1}次连接邮件服务器: {self.smtp_server}:{self.smtp_port}")
+                smtp = smtplib.SMTP_SSL(
+                    self.smtp_server,
+                    self.smtp_port,
+                    local_hostname='localhost'
+                )
 
-            # 登录邮箱
-            logger.info(f"登录邮箱: {self.smtp_sender}")
-            smtp.login(self.smtp_sender, self.smtp_password)
+                # 2. 登录邮箱
+                logger.info(f"登录邮箱: {self.smtp_sender}")
+                smtp.login(self.smtp_sender, self.smtp_password)
 
-            # 处理收件人和抄送人列表
-            receivers = []
-            if self.smtp_receiver:
-                receivers.extend([addr.strip() for addr in self.smtp_receiver.split(',') if addr.strip()])
-            if self.smtp_cc:
-                receivers.extend([addr.strip() for addr in self.smtp_cc.split(',') if addr.strip()])
+                # 3. 处理收件人/抄送人
+                receivers = []
+                if self.smtp_receiver:
+                    receivers.extend([addr.strip() for addr in self.smtp_receiver.split(',') if addr.strip()])
+                if self.smtp_cc:
+                    receivers.extend([addr.strip() for addr in self.smtp_cc.split(',') if addr.strip()])
+                receivers = list(set(receivers))  # 去重
+                if not receivers:
+                    logger.warning("没有有效的收件人，取消发送邮件")
+                    return False
 
-            # 去重处理
-            receivers = list(set(receivers))
-            if not receivers:
-                logger.warning("没有有效的收件人，取消发送邮件")
-                return False
+                # 4. 发送邮件
+                logger.info(f"准备发送邮件到: {', '.join(receivers)}")
+                smtp.sendmail(
+                    self.smtp_sender,
+                    receivers,
+                    self.mail_message_body().as_string()
+                )
+                logger.info("邮件发送成功")
+                return True
 
-            logger.info(f"准备发送邮件到: {', '.join(receivers)}")
-
-            # 发送邮件
-            smtp.sendmail(
-                self.smtp_sender,
-                receivers,
-                self.mail_message_body().as_string()
-            )
-
-            logger.info("邮件发送成功")
-            return True
-        except smtplib.SMTPException as e:
-            logger.error(f"SMTP错误导致邮件发送失败：{str(e)}", exc_info=True)
-            return False
-        except Exception as e:
-            logger.error(f"邮件发送失败：{str(e)}", exc_info=True)
-            return False
-        finally:
-            # 确保连接关闭
-            if smtp:
-                try:
-                    smtp.quit()
-                    logger.debug("SMTP连接已关闭")
-                except Exception as e:
-                    logger.warning(f"关闭SMTP连接失败：{str(e)}")
+            except smtplib.SMTPException as e:
+                if attempt < retry:
+                    wait_time = (attempt + 1) * 3  # 重试间隔：3s, 6s, 9s...
+                    logger.warning(f"第{attempt + 1}次发送失败（SMTP错误），{wait_time}秒后重试: {str(e)}")
+                    time.sleep(wait_time)
+                else:
+                    logger.error(f"所有{retry + 1}次发送均失败（SMTP错误）: {str(e)}", exc_info=True)
+                    return False
+            except Exception as e:
+                if attempt < retry:
+                    wait_time = (attempt + 1) * 3
+                    logger.warning(f"第{attempt + 1}次发送失败，{wait_time}秒后重试: {str(e)}")
+                    time.sleep(wait_time)
+                else:
+                    logger.error(f"所有{retry + 1}次发送均失败: {str(e)}", exc_info=True)
+                    return False
+            finally:
+                # 确保连接关闭
+                if smtp:
+                    try:
+                        smtp.quit()
+                        logger.debug("SMTP连接已关闭")
+                    except Exception as e:
+                        logger.warning(f"关闭SMTP连接失败: {str(e)}")
+    # def send_email(self):
+    #     """发送邮件"""
+    #     smtp = None
+    #     try:
+    #         # 建立连接
+    #         logger.info(f"开始连接邮件服务器: {self.smtp_server}:{self.smtp_port}")
+    #         smtp = smtplib.SMTP_SSL(
+    #             self.smtp_server,
+    #             self.smtp_port,
+    #             local_hostname='localhost'
+    #         )
+    #
+    #         # 登录邮箱
+    #         logger.info(f"登录邮箱: {self.smtp_sender}")
+    #         smtp.login(self.smtp_sender, self.smtp_password)
+    #
+    #         # 处理收件人和抄送人列表
+    #         receivers = []
+    #         if self.smtp_receiver:
+    #             receivers.extend([addr.strip() for addr in self.smtp_receiver.split(',') if addr.strip()])
+    #         if self.smtp_cc:
+    #             receivers.extend([addr.strip() for addr in self.smtp_cc.split(',') if addr.strip()])
+    #
+    #         # 去重处理
+    #         receivers = list(set(receivers))
+    #         if not receivers:
+    #             logger.warning("没有有效的收件人，取消发送邮件")
+    #             return False
+    #
+    #         logger.info(f"准备发送邮件到: {', '.join(receivers)}")
+    #
+    #         # 发送邮件
+    #         smtp.sendmail(
+    #             self.smtp_sender,
+    #             receivers,
+    #             self.mail_message_body().as_string()
+    #         )
+    #
+    #         logger.info("邮件发送成功")
+    #         return True
+    #     except smtplib.SMTPException as e:
+    #         logger.error(f"SMTP错误导致邮件发送失败：{str(e)}", exc_info=True)
+    #         return False
+    #     except Exception as e:
+    #         logger.error(f"邮件发送失败：{str(e)}", exc_info=True)
+    #         return False
+    #     finally:
+    #         # 确保连接关闭
+    #         if smtp:
+    #             try:
+    #                 smtp.quit()
+    #                 logger.debug("SMTP连接已关闭")
+    #             except Exception as e:
+    #                 logger.warning(f"关闭SMTP连接失败：{str(e)}")
 
 
 if __name__ == '__main__':

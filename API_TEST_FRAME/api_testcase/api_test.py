@@ -7,7 +7,6 @@ import paramunittest
 from common.testdata_utils import TestdataUtils
 from common.requests_utils import RequestsUtils
 from common.log_utils import logger
-from common.test_report_generator_utils import TestReportGenerator
 
 # 获取测试用例数据
 case_infos = TestdataUtils().def_testcase_data_list()
@@ -51,11 +50,12 @@ def generate_test_class(case_infos):
                 actual_result = RequestsUtils().request_by_step(self.case_info)
 
                 # 验证结果
+                logger.warning(actual_result)
                 self.assertTrue(
                     actual_result.get('check_result'),
                     f"测试用例失败: {actual_result.get('message')}"
                 )
-                # TestReportGenerator().generate(test_results)
+
                 logger.info(f"测试用例 {self._testMethodName} 执行成功")
 
             except AssertionError as ae:
