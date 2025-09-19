@@ -77,7 +77,7 @@ def load_config(env='test_env'):
 
     # ------------------------------ MySQL配置（敏感信息从环境变量读取）------------------------------
     config_dict['MYSQL_DB_HOST'] = os.getenv('MYSQL_HOST',
-                                             config_utils.read_value('mysql', 'MYSQL_DB_HOST', default='host.docker.internal')
+                                             config_utils.read_value('mysql', 'MYSQL_DB_HOST', default='127.0.0.1')
                                              )
     config_dict['MYSQL_DB_PORT'] = config_utils.read_int('mysql', 'MYSQL_DB_PORT', default=3306)
     config_dict['MYSQL_DB_USER'] = os.getenv('MYSQL_USER',

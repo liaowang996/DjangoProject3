@@ -3,7 +3,7 @@ import psutil
 import glob
 from common import config
 from common.log_utils import logger
-
+from common.excel_to_mysql_importer import ExcelToMysqlImporter
 # 兼容xls和xlsx格式（根据文件后缀选择库）
 try:
     import xlrd
@@ -267,18 +267,21 @@ class ExcelUtils():
 
 if __name__ == '__main__':
     # 测试代码
+    a=ExcelToMysqlImporter()
     current_path = os.path.dirname(os.path.abspath(__file__))
     # 测试xlsx文件（需确保test_demo.xlsx存在）
     xlsx_path = os.path.join(current_path, '..', 'test_data', 'test_demo.xlsx')
     if os.path.exists(xlsx_path):
         excel_xlsx = ExcelUtils(xlsx_path, 'Sheet1')
         print(f"xlsx数据: {excel_xlsx.get_sheet_data_by_dict()}")
+        a.import_case_info(excel_xlsx.get_sheet_data_by_dict())
         excel_xlsx.close()
     # 测试xls文件
     xls_path = os.path.join(current_path, '..', 'test_data', 'test_demo.xls')
     if os.path.exists(xls_path):
         excel_xls = ExcelUtils(xls_path, 'Sheet1')
         print(f"xls数据: {excel_xls.get_sheet_data_by_dict()}")
+        a.import_case_info(excel_xls.get_sheet_data_by_dict())
         excel_xls.close()
     # 测试批量读取
     ExcelUtils(xls_path, 'Sheet1').read_multiple_excel_cases()

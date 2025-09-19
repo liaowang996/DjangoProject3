@@ -40,21 +40,21 @@ class TestdataUtils():
             if row_data['用例执行'] == '是':
                 testcase_dict.setdefault(row_data['模块名称']+'_'+row_data['测试用例编号'], []).append(row_data)
 
-        # logger.info(testcase_dict)
+        logger.info(testcase_dict)
         return testcase_dict
 
     def def_testcase_data_list(self):
         testcase_list = []
         for case_id, case_info in self.__get_testcase_data_dict().items():
             testcase_list.append({'case_id': case_id, 'case_info': case_info})
-        # logger.info(testcase_list)
+        logger.info(testcase_list)
         return tuple(testcase_list)
 
     # 处理数据库数据
     def __get_testcase_data_dict_by_mysql(self):
         testcase_dict = {}
         for row_data in self.test_data_by_mysql:
-            testcase_dict.setdefault(row_data['测试用例编号'], []).append(row_data)
+            testcase_dict.setdefault(row_data['模块名称']+'_'+row_data['测试用例编号'], []).append(row_data)
         return testcase_dict
 
     def def_testcase_data_list_by_mysql(self):
@@ -108,8 +108,8 @@ if __name__ == '__main__':
 
         # 读取所有Excel文件中的用例
         testdata_utils = TestdataUtils()
-        all_test_cases = testdata_utils.def_testcase_data_list()
-
+        all_test_cases = testdata_utils.def_testcase_data_list_by_mysql()
+        print(all_test_cases)
 
     except Exception as e:
         logger.error(f"执行出错: {str(e)}")

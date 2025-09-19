@@ -9,11 +9,11 @@ from common.requests_utils import RequestsUtils
 from common.log_utils import logger
 
 # 获取测试用例数据
-case_infos = TestdataUtils().def_testcase_data_list()
+#case_infos = TestdataUtils().def_testcase_data_list()
 
 
 # 可选：从MySQL获取测试数据
-#case_infos = TestdataUtils().def_testcase_data_list_by_mysql()
+case_infos = TestdataUtils().def_testcase_data_list_by_mysql()
 
 class APITestBase(unittest.TestCase):
     """API测试基类，封装通用功能"""
