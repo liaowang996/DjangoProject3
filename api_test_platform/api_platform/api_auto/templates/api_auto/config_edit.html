@@ -1,0 +1,41 @@
+{% extends "api_auto/base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5>{% if config.id %}编辑{% else %}新增{% endif %}环境配置</h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="url_chin_name" class="form-label">接口中文名称</label>
+                <input type="text" class="form-control" id="url_chin_name" name="url_chin_name"
+                       value="{{ config.url_chin_name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="section" class="form-label">配置节</label>
+                <input type="text" class="form-control" id="section" name="section"
+                       value="{{ config.section }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="key_name" class="form-label">键名</label>
+                <input type="text" class="form-control" id="key_name" name="key_name"
+                       value="{{ config.key_name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="urls_addr" class="form-label">接口地址</label>
+                <input type="text" class="form-control" id="urls_addr" name="urls_addr"
+                       value="{{ config.urls_addr }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="note" class="form-label">备注</label>
+                <input type="text" class="form-control" id="note" name="note"
+                       value="{{ config.note|default:"" }}">
+            </div>
+            <button type="submit" class="btn btn-primary">保存</button>
+            <a href="{% url 'api_auto:config_list' %}" class="btn btn-secondary">取消</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

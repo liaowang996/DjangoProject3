@@ -1,0 +1,51 @@
+{% extends "api_auto/base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5>环境配置列表</h5>
+        <a href="{% url 'api_auto:config_edit' %}" class="btn btn-primary btn-sm">
+            <i class="bi bi-plus-circle"></i> 新增配置
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>接口中文名称</th>
+                        <th>配置节</th>
+                        <th>键名</th>
+                        <th>接口地址</th>
+                        <th>备注</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for config in configs %}
+                    <tr>
+                        <td>{{ config.url_chin_name }}</td>
+                        <td>{{ config.section }}</td>
+                        <td>{{ config.key_name }}</td>
+                        <td>{{ config.urls_addr }}</td>
+                        <td>{{ config.note|default:"" }}</td>
+                        <td>
+                            <a href="{% url 'api_auto:config_edit' config.id %}" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-pencil"></i> 编辑
+                            </a>
+                            <a href="{% url 'api_auto:config_delete' config.id %}" class="btn btn-sm btn-outline-danger" onclick="return confirm('确定删除此配置吗？')">
+                                <i class="bi bi-trash"></i> 删除
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center">暂无配置数据</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
