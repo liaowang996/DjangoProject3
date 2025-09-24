@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e5396ad0-b80e-46ff-96a5-d3f3d47dd9ab" name="Changes" comment="1.一站式自动化平台">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,30 +50,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.api_test_platform.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in api_test.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run_case.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sql_utils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testdata_utils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;codeReviewSummary&quot;: &quot;[]&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/workdir/DjangoProject3/api_test_platform&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.api_test_platform.executor": "Run",
+    "Python tests.Python tests in api_test.py.executor": "Run",
+    "Python.run_case.executor": "Run",
+    "Python.sql_utils.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.testdata_utils.executor": "Run",
+    "Python.tests.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "codeReviewSummary": "[]",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/workdir/DjangoProject3/api_test_platform",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.baidu.comate.intellij.config.id",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workdir\DjangoProject3\api_test_platform" />
@@ -246,7 +251,7 @@
       <updated>1758522891762</updated>
       <workItem from="1758522892849" duration="14192000" />
       <workItem from="1758546219706" duration="26381000" />
-      <workItem from="1758689005799" duration="381000" />
+      <workItem from="1758689005799" duration="3452000" />
     </task>
     <task id="LOCAL-00001" summary="1.一站式自动化平台">
       <option name="closed" value="true" />
@@ -256,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758689321182</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1.一站式自动化平台">
+      <option name="closed" value="true" />
+      <created>1758689394397</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758689394397</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

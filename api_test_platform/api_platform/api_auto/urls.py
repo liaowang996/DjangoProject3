@@ -11,4 +11,10 @@ urlpatterns = [
     path('run-single-case/<str:case_step_id>/', views.run_single_case, name='run_single_case'),  # 单条执行
     path('run-all-cases/', views.run_all_cases, name='run_all_cases'),  # 全量执行
     path('dashboard/', views.dashboard, name='dashboard'),  # 仪表盘
+    path('api-config/', views.api_config, name='api_config'),  # 接口配置
+    # 环境配置相关路由
+    path('config/', views.config_list, name='config_list'),
+    path('config/edit/', views.config_edit, name='config_edit'),
+    path('config/edit/<int:config_id>/', views.config_edit, name='config_edit'),
+    path('config/delete/<int:config_id>/', views.config_delete, name='config_delete'),
 ]

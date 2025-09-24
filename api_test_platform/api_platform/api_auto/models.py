@@ -56,3 +56,21 @@ class CaseStepInfo(models.Model):
 
     def __str__(self):
         return f"{self.part_name}-{self.case_id}-{self.case_step_name}"
+
+
+class ConfigUrl(models.Model):
+    """环境配置表"""
+    url_chin_name = models.CharField(max_length=100, verbose_name="接口中文名称")
+    section = models.CharField(max_length=100, verbose_name="配置节")
+    key_name = models.CharField(max_length=100, verbose_name="键名")
+    urls_addr = models.CharField(max_length=100, verbose_name="接口地址")
+    note = models.CharField(max_length=100, verbose_name="备注", blank=True, null=True)
+
+    class Meta:
+        db_table = 'config_urls'
+        verbose_name = "环境配置"
+        verbose_name_plural = verbose_name
+        unique_together = ('section', 'key_name')  # 确保section和key_name组合唯一
+
+    def __str__(self):
+        return f"{self.url_chin_name} ({self.urls_addr})"

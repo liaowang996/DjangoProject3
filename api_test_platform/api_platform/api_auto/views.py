@@ -13,7 +13,7 @@ from django.core.files.storage import FileSystemStorage
 
 from common.log_utils import logger
 # 导入自定义模型和工具
-from .models import CaseStepInfo, ApiInfo, CaseInfo
+from .models import CaseStepInfo, ApiInfo, CaseInfo, ConfigUrl
 from .forms import ExcelUploadForm
 from common.excel_to_mysql_importer import ExcelToMysqlImporter
 from common.excel_utils import ExcelUtils
@@ -270,10 +270,76 @@ def dashboard(request):
     pass_rate = (stats['passed'] / stats['total'] * 100) if stats['total'] > 0 else 0
 
     # 获取失败用例列表
-    failed_cases = CaseStepInfo.objects.filter(is_pass="失败").select_related('case_id')
+    failed_cases = CaseStepInfo.objects.filter(is_pass="失败").select_related('api')
 
     return render(request, 'api_auto/dashboard.html', {
         'pass_rate': round(pass_rate, 2),
         'stats': stats,
         'failed_cases': failed_cases
     })
+
+
+def config_list(request):
+    """环境配置列表"""
+    configs = ConfigUrl.objects.all().order_by('section', 'key_name')
+    return render(request, 'api_auto/config_list.html', {
+        'configs': configs
+    })
+
+
+def config_edit(request, config_id=None):
+    """编辑或新增环境配置"""
+    if request.method == 'POST':
+        section = request.POST.get('section')
+        key_name = request.POST.get('key_name')
+
+        # 检查是否已存在相同section和key_name的记录
+        existing_config = ConfigUrl.objects.filter(
+            section=section,
+            key_name=key_name
+        ).exclude(id=config_id).first()
+
+        if existing_config:
+            # 更新已有记录
+            config = existing_config
+            messages.info(request, "配置已存在，已更新原有记录")
+        elif config_id:
+            config = get_object_or_404(ConfigUrl, id=config_id)
+        else:
+            config = ConfigUrl()
+
+        # 获取表单数据
+        config.url_chin_name = request.POST.get('url_chin_name')
+        config.section = section
+        config.key_name = key_name
+        config.urls_addr = request.POST.get('urls_addr')
+        config.note = request.POST.get('note')
+
+        try:
+            config.save()
+            messages.success(request, "配置保存成功！")
+            return redirect('api_auto:config_list')
+        except Exception as e:
+            messages.error(request, f"保存失败：{str(e)}")
+            return render(request, 'api_auto/config_edit.html', {
+                'config': config,
+                'error': str(e)
+            })
+
+    else:
+        if config_id:
+            config = get_object_or_404(ConfigUrl, id=config_id)
+        else:
+            config = ConfigUrl()
+
+        return render(request, 'api_auto/config_edit.html', {
+            'config': config
+        })
+
+
+def config_delete(request, config_id):
+    """删除环境配置"""
+    config = get_object_or_404(ConfigUrl, id=config_id)
+    config.delete()
+    messages.success(request, "配置删除成功！")
+    return redirect('api_auto:config_list')
