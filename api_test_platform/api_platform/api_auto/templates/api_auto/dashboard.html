@@ -1,0 +1,94 @@
+{% extends "api_auto/base.html" %}
+
+{% block title %}接口自动化测试仪表盘{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>接口自动化测试仪表盘</h2>
+
+    <!-- 通过率卡片 -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5>用例执行统计</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">总用例数</h5>
+                            <p class="card-text display-4">{{ stats.total }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">通过用例</h5>
+                            <p class="card-text display-4">{{ stats.passed }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-danger mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">失败用例</h5>
+                            <p class="card-text display-4">{{ stats.failed }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress mt-3" style="height: 30px;">
+                <div class="progress-bar bg-success" role="progressbar"
+                     style="width: {{ pass_rate }}%"
+                     aria-valuenow="{{ pass_rate }}"
+                     aria-valuemin="0"
+                     aria-valuemax="100">
+                    {{ pass_rate }}% 通过率
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 失败用例列表 -->
+    <div class="card">
+        <div class="card-header">
+            <h5>失败用例列表</h5>
+        </div>
+        <div class="card-body">
+            {% if failed_cases %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>用例ID</th>
+                            <th>用例名称</th>
+                            <th>失败原因</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for case in failed_cases %}
+                        <tr>
+                            <td>{{ case.case_step_info_id }}</td>
+                            <td>{{ case.case_id.case_name }}</td>
+                            <td>{{ case.fail_reason|default:"未记录" }}</td>
+                            <td>
+                                <a href="{% url 'api_auto:case_detail' case.case_step_info_id %}"
+                                   class="btn btn-sm btn-info">查看详情</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="alert alert-success">
+                当前没有失败用例！
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

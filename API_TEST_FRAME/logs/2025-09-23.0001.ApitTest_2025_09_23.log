@@ -1,0 +1,405 @@
+2025-09-23 13:11:16 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:69" - run - INFO - ============================================================
+2025-09-23 13:11:16 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:70" - run - INFO - 开始接口自动化测试流程
+2025-09-23 13:11:16 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:71" - run - INFO - 测试环境: test_env
+2025-09-23 13:11:16 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:72" - run - INFO - ============================================================
+2025-09-23 13:11:16 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:37" - get_test_suite - INFO - 开始收集测试用例，路径: D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:140" - get_merged_info - DEBUG - 工作表 'Sheet1' 合并单元格数量: 0
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:32" - __init__ - INFO - Excel工具初始化完成: test_demo.xls - Sheet1
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:209" - read_multiple_excel_cases - INFO - 发现 2 个Excel文件，开始读取用例...
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:140" - get_merged_info - DEBUG - 工作表 'Sheet1' 合并单元格数量: 0
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:32" - __init__ - INFO - Excel工具初始化完成: test_demo.xls - Sheet1
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:182" - get_sheet_data_by_dict - INFO - 从工作表 'Sheet1' 读取到 3 条数据
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:221" - read_multiple_excel_cases - INFO - 从 test_demo.xls 读取到 3 条用例
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:140" - get_merged_info - DEBUG - 工作表 'Sheet1' 合并单元格数量: 0
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:32" - __init__ - INFO - Excel工具初始化完成: test_demo2.xls - Sheet1
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:182" - get_sheet_data_by_dict - INFO - 从工作表 'Sheet1' 读取到 3 条数据
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:221" - read_multiple_excel_cases - INFO - 从 test_demo2.xls 读取到 3 条用例
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:228" - read_multiple_excel_cases - INFO - 批量读取完成，共获取 6 条用例
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\sql_utils.py:36" - _get_connection - INFO - 连接数据库: 127.0.0.1:3308
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\sql_utils.py:39" - _get_connection - DEBUG - 数据库连接成功
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\sql_utils.py:82" - execute_query - DEBUG - 查询返回 6 条记录
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:47" - get_test_suite - INFO - 用例收集完成，共 6 个用例
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:63" - _get_report_path - INFO - 测试报告将保存至: D:\workdir\DjangoProject3\API_TEST_FRAME\test_reports\接口自动化测试报告_20250923131136\接口自动化测试报告.html
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_1_test_case_01
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 注册接口_part_1 (ID: part_1_case_01)
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/register, 参数: {}, 提交数据: {"email": "sydney@fife","password": "pistol"}
+2025-09-23 13:11:36 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 502, 响应内容: 
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:136" - _extract_variable - ERROR - 正则匹配失败: 表达式"total_pages":(.+?)未匹配到值
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=error
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:63" - check_key - ERROR - JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: 
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: None
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Gateway', 'response_code': 502, 'response_headers': {'Connection': 'close', 'Content-Length': '0'}, 'reponse_body': '', 'check_result': False, 'message': 'JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)'}
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_1_test_case_01
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_1_test_case_02
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 登录失败接口1_part_1 (ID: part_1_case_02)
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/login, 参数: {}, 提交数据: {"email": "123123"}
+2025-09-23 13:11:38 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 502, 响应内容: 
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=error
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:63" - check_key - ERROR - JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: 
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: None
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Gateway', 'response_code': 502, 'response_headers': {'Connection': 'close', 'Content-Length': '0'}, 'reponse_body': '', 'check_result': False, 'message': 'JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)'}
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_1_test_case_02
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_1_test_case_03
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 登录失败接口2_part_1 (ID: part_1_case_03)
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/login, 参数: {}, 提交数据: {"email": "12323"}
+2025-09-23 13:11:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 502, 响应内容: 
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=error
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:63" - check_key - ERROR - JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: 
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: None
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Gateway', 'response_code': 502, 'response_headers': {'Connection': 'close', 'Content-Length': '0'}, 'reponse_body': '', 'check_result': False, 'message': 'JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)'}
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_1_test_case_03
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_2_test_case_01
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 注册接口part_2 (ID: part_2_case_01)
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/register, 参数: {}, 提交数据: {"email": "sydney@fife","password": "pistol"}
+2025-09-23 13:11:42 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 502, 响应内容: 
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:136" - _extract_variable - ERROR - 正则匹配失败: 表达式"total_pages":(.+?)未匹配到值
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=total_pages
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:63" - check_key - ERROR - JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: 
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: None
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Gateway', 'response_code': 502, 'response_headers': {'Connection': 'close', 'Content-Length': '0'}, 'reponse_body': '', 'check_result': False, 'message': 'JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)'}
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_2_test_case_01
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_2_test_case_02
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 登录失败接口1_part_2 (ID: part_2_case_02)
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/login, 参数: {}, 提交数据: {"email": "123123"}
+2025-09-23 13:11:44 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 502, 响应内容: 
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=total_pages
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:63" - check_key - ERROR - JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: 
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: None
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Gateway', 'response_code': 502, 'response_headers': {'Connection': 'close', 'Content-Length': '0'}, 'reponse_body': '', 'check_result': False, 'message': 'JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)'}
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_2_test_case_02
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_2_test_case_03
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 登录失败接口2_part_2 (ID: part_2_case_03)
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/login, 参数: {}, 提交数据: {"email": "12323"}
+2025-09-23 13:11:47 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 502, 响应内容: 
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=total_pages
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:63" - check_key - ERROR - JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: 
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: None
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Gateway', 'response_code': 502, 'response_headers': {'Connection': 'close', 'Content-Length': '0'}, 'reponse_body': '', 'check_result': False, 'message': 'JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)'}
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败：响应不是JSON格式: Expecting value: line 1 column 1 (char 0)
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_2_test_case_03
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:94" - run - INFO - ============================================================
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:95" - run - INFO - 测试执行完成，结果统计:
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:96" - run - INFO - 总用例数: 6
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:97" - run - INFO - 通过: 0
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:98" - run - INFO - 失败: 6
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:99" - run - INFO - 错误: 0
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:100" - run - INFO - ============================================================
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:180" - <module> - INFO - 开始准备测试报告邮件
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:37" - get_test_suite - INFO - 开始收集测试用例，路径: D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:47" - get_test_suite - INFO - 用例收集完成，共 6 个用例
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:48" - _load_and_validate_config - DEBUG - 加载邮件配置: 服务器=smtp.qq.com, 端口=465, 发件人=821745075@qq.com
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:66" - _validate_attachment_path - DEBUG - 验证附件路径成功: D:\workdir\DjangoProject3\API_TEST_FRAME\test_reports\接口自动化测试报告_20250923131136\接口自动化测试报告.html
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:23" - __init__ - INFO - 邮件工具初始化完成
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:113" - send_email - INFO - 第1/3次连接邮件服务器: smtp.qq.com:465
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:121" - send_email - INFO - 登录邮箱: 821745075@qq.com
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:136" - send_email - INFO - 准备发送邮件到: 2337125095@qq.com, 821745075@qq.com
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:80" - mail_message_body - DEBUG - 已添加邮件正文
+2025-09-23 13:11:49 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:96" - mail_message_body - DEBUG - 已添加附件: 接口自动化测试报告.html
+2025-09-23 13:11:50 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:142" - send_email - INFO - 邮件发送成功
+2025-09-23 13:11:50 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:166" - send_email - DEBUG - SMTP连接已关闭
+2025-09-23 13:11:50 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:189" - <module> - INFO - 测试报告邮件发送成功
+2025-09-23 13:11:50 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:193" - <module> - INFO - ============================================================
+2025-09-23 13:11:50 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:194" - <module> - INFO - 接口自动化测试流程全部结束
+2025-09-23 13:11:50 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:195" - <module> - INFO - ============================================================
+2025-09-23 13:28:18 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:69" - run - INFO - ============================================================
+2025-09-23 13:28:18 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:70" - run - INFO - 开始接口自动化测试流程
+2025-09-23 13:28:18 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:71" - run - INFO - 测试环境: test_env
+2025-09-23 13:28:18 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:72" - run - INFO - ============================================================
+2025-09-23 13:28:18 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:37" - get_test_suite - INFO - 开始收集测试用例，路径: D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:140" - get_merged_info - DEBUG - 工作表 'Sheet1' 合并单元格数量: 0
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:32" - __init__ - INFO - Excel工具初始化完成: test_demo.xls - Sheet1
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:209" - read_multiple_excel_cases - INFO - 发现 2 个Excel文件，开始读取用例...
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:140" - get_merged_info - DEBUG - 工作表 'Sheet1' 合并单元格数量: 0
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:32" - __init__ - INFO - Excel工具初始化完成: test_demo.xls - Sheet1
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:182" - get_sheet_data_by_dict - INFO - 从工作表 'Sheet1' 读取到 3 条数据
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:221" - read_multiple_excel_cases - INFO - 从 test_demo.xls 读取到 3 条用例
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:140" - get_merged_info - DEBUG - 工作表 'Sheet1' 合并单元格数量: 0
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:32" - __init__ - INFO - Excel工具初始化完成: test_demo2.xls - Sheet1
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:182" - get_sheet_data_by_dict - INFO - 从工作表 'Sheet1' 读取到 3 条数据
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:221" - read_multiple_excel_cases - INFO - 从 test_demo2.xls 读取到 3 条用例
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\excel_utils.py:228" - read_multiple_excel_cases - INFO - 批量读取完成，共获取 6 条用例
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\sql_utils.py:36" - _get_connection - INFO - 连接数据库: 127.0.0.1:3308
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\sql_utils.py:39" - _get_connection - DEBUG - 数据库连接成功
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\sql_utils.py:82" - execute_query - DEBUG - 查询返回 6 条记录
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:47" - get_test_suite - INFO - 用例收集完成，共 6 个用例
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:63" - _get_report_path - INFO - 测试报告将保存至: D:\workdir\DjangoProject3\API_TEST_FRAME\test_reports\接口自动化测试报告_20250923132840\接口自动化测试报告.html
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_1_test_case_01
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 注册接口_part_1 (ID: part_1_case_01)
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/register, 参数: {}, 提交数据: {"email": "sydney@fife","password": "pistol"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 400, 响应内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:136" - _extract_variable - ERROR - 正则匹配失败: 表达式"total_pages":(.+?)未匹配到值
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=error
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:53" - check_key - DEBUG - JSON键检查通过，所有键存在: error
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: application/json; charset=utf-8
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 2
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 2, 'response_reason': 'Bad Request', 'response_code': 400, 'response_headers': {'Connection': 'close', 'Content-Length': '37', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Tue, 23 Sep 2025 05:28:40 GMT', 'Etag': 'W/"25-g2zwK8Aej8Xn4eWBBVBqAQ"', 'X-Powered-By': 'Express'}, 'reponse_body': '{"error":"Missing email or username"}', 'check_result': True, 'message': 'JSON键检查通过，所有键存在: error'}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:59" - test_api_request - INFO - 测试用例 test_part_1_test_case_01 执行成功
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_1_test_case_01
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_1_test_case_02
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 登录失败接口1_part_1 (ID: part_1_case_02)
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/login, 参数: {}, 提交数据: {"email": "123123"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 400, 响应内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=error
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:53" - check_key - DEBUG - JSON键检查通过，所有键存在: error
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: application/json; charset=utf-8
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 2
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 2, 'response_reason': 'Bad Request', 'response_code': 400, 'response_headers': {'Connection': 'close', 'Content-Length': '37', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Tue, 23 Sep 2025 05:28:40 GMT', 'Etag': 'W/"25-g2zwK8Aej8Xn4eWBBVBqAQ"', 'X-Powered-By': 'Express'}, 'reponse_body': '{"error":"Missing email or username"}', 'check_result': True, 'message': 'JSON键检查通过，所有键存在: error'}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:59" - test_api_request - INFO - 测试用例 test_part_1_test_case_02 执行成功
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_1_test_case_02
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_1_test_case_03
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 登录失败接口2_part_1 (ID: part_1_case_03)
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/login, 参数: {}, 提交数据: {"email": "12323"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 400, 响应内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=error
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:53" - check_key - DEBUG - JSON键检查通过，所有键存在: error
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: application/json; charset=utf-8
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 2
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 2, 'response_reason': 'Bad Request', 'response_code': 400, 'response_headers': {'Connection': 'close', 'Content-Length': '37', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Tue, 23 Sep 2025 05:28:40 GMT', 'Etag': 'W/"25-g2zwK8Aej8Xn4eWBBVBqAQ"', 'X-Powered-By': 'Express'}, 'reponse_body': '{"error":"Missing email or username"}', 'check_result': True, 'message': 'JSON键检查通过，所有键存在: error'}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:59" - test_api_request - INFO - 测试用例 test_part_1_test_case_03 执行成功
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_1_test_case_03
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_2_test_case_01
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 注册接口part_2 (ID: part_2_case_01)
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/register, 参数: {}, 提交数据: {"email": "sydney@fife","password": "pistol"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 400, 响应内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:136" - _extract_variable - ERROR - 正则匹配失败: 表达式"total_pages":(.+?)未匹配到值
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:57" - check_key - ERROR - JSON键检查失败，缺失键: total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: application/json; charset=utf-8
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Request', 'response_code': 400, 'response_headers': {'Connection': 'close', 'Content-Length': '37', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Tue, 23 Sep 2025 05:28:40 GMT', 'Etag': 'W/"25-g2zwK8Aej8Xn4eWBBVBqAQ"', 'X-Powered-By': 'Express'}, 'reponse_body': '{"error":"Missing email or username"}', 'check_result': False, 'message': 'JSON键检查失败，缺失键: total_pages'}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败，缺失键: total_pages
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败，缺失键: total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_2_test_case_01
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_2_test_case_02
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 登录失败接口1_part_2 (ID: part_2_case_02)
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/login, 参数: {}, 提交数据: {"email": "123123"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 400, 响应内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:57" - check_key - ERROR - JSON键检查失败，缺失键: total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: application/json; charset=utf-8
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Request', 'response_code': 400, 'response_headers': {'Connection': 'close', 'Content-Length': '37', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Tue, 23 Sep 2025 05:28:40 GMT', 'Etag': 'W/"25-g2zwK8Aej8Xn4eWBBVBqAQ"', 'X-Powered-By': 'Express'}, 'reponse_body': '{"error":"Missing email or username"}', 'check_result': False, 'message': 'JSON键检查失败，缺失键: total_pages'}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败，缺失键: total_pages
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败，缺失键: total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_2_test_case_02
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:24" - setUp - INFO - 开始执行测试用例: test_part_2_test_case_03
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:47" - test_api_request - INFO - 执行测试用例: 登录失败接口2_part_2 (ID: part_2_case_03)
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:22" - __init__ - DEBUG - 请求超时时间设置为: 10秒
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:151" - request - INFO - 开始处理请求步骤: step_01, 方式: POST
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:69" - __post - DEBUG - 发送POST请求: http://192.168.1.4:3000/api/login, 参数: {}, 提交数据: {"email": "12323"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:77" - __post - WARNING - {}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:86" - __post - DEBUG - POST响应状态码: 400, 响应内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:150" - run_check - INFO - 开始执行断言: 类型=json键是否存在, 数据=total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\check_utils.py:57" - check_key - ERROR - JSON键检查失败，缺失键: total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:97" - __post - DEBUG - POST响应完整内容: {"error":"Missing email or username"}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:98" - __post - DEBUG - POST响应Content-Type: application/json; charset=utf-8
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:167" - request - INFO - 请求步骤处理完成: step_01, 结果: 4
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\requests_utils.py:202" - request_by_step - ERROR - 步骤step_01执行失败，终止后续步骤
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:53" - test_api_request - WARNING - {'code': 4, 'response_reason': 'Bad Request', 'response_code': 400, 'response_headers': {'Connection': 'close', 'Content-Length': '37', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Tue, 23 Sep 2025 05:28:40 GMT', 'Etag': 'W/"25-g2zwK8Aej8Xn4eWBBVBqAQ"', 'X-Powered-By': 'Express'}, 'reponse_body': '{"error":"Missing email or username"}', 'check_result': False, 'message': 'JSON键检查失败，缺失键: total_pages'}
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:62" - test_api_request - ERROR - 测试用例断言失败: False is not true : 测试用例失败: JSON键检查失败，缺失键: total_pages
+Traceback (most recent call last):
+  File "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py", line 54, in test_api_request
+    self.assertTrue(
+    ~~~~~~~~~~~~~~~^
+        actual_result.get('check_result'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"测试用例失败: {actual_result.get('message')}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\廖望\AppData\Local\Programs\Python\Python313\Lib\unittest\case.py", line 744, in assertTrue
+    raise self.failureException(msg)
+AssertionError: False is not true : 测试用例失败: JSON键检查失败，缺失键: total_pages
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase\api_test.py:27" - tearDown - INFO - 测试用例执行结束: test_part_2_test_case_03
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:94" - run - INFO - ============================================================
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:95" - run - INFO - 测试执行完成，结果统计:
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:96" - run - INFO - 总用例数: 6
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:97" - run - INFO - 通过: 3
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:98" - run - INFO - 失败: 3
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:99" - run - INFO - 错误: 0
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:100" - run - INFO - ============================================================
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:180" - <module> - INFO - 开始准备测试报告邮件
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:37" - get_test_suite - INFO - 开始收集测试用例，路径: D:\workdir\DjangoProject3\API_TEST_FRAME\api_testcase
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:47" - get_test_suite - INFO - 用例收集完成，共 6 个用例
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:48" - _load_and_validate_config - DEBUG - 加载邮件配置: 服务器=smtp.qq.com, 端口=465, 发件人=821745075@qq.com
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:66" - _validate_attachment_path - DEBUG - 验证附件路径成功: D:\workdir\DjangoProject3\API_TEST_FRAME\test_reports\接口自动化测试报告_20250923132840\接口自动化测试报告.html
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:23" - __init__ - INFO - 邮件工具初始化完成
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:113" - send_email - INFO - 第1/3次连接邮件服务器: smtp.qq.com:465
+2025-09-23 13:28:40 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:121" - send_email - INFO - 登录邮箱: 821745075@qq.com
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:136" - send_email - INFO - 准备发送邮件到: 2337125095@qq.com, 821745075@qq.com
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:80" - mail_message_body - DEBUG - 已添加邮件正文
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:96" - mail_message_body - DEBUG - 已添加附件: 接口自动化测试报告.html
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:142" - send_email - INFO - 邮件发送成功
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\common\email_utils.py:166" - send_email - DEBUG - SMTP连接已关闭
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:189" - <module> - INFO - 测试报告邮件发送成功
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:193" - <module> - INFO - ============================================================
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:194" - <module> - INFO - 接口自动化测试流程全部结束
+2025-09-23 13:28:41 - ApitTest - "D:\workdir\DjangoProject3\API_TEST_FRAME\test_runner\run_case.py:195" - <module> - INFO - ============================================================

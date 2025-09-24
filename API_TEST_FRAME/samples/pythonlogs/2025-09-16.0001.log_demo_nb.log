@@ -1,0 +1,6 @@
+2025-09-16 18:24:55 - ApiTestLog - "D:\workdir\DjangoProject3\API_TEST_FRAME\samples\log_demo_nb.py:11" - <module> - INFO - this is info
+2025-09-16 18:24:55 - ApiTestLog - "D:\workdir\DjangoProject3\API_TEST_FRAME\samples\log_demo_nb.py:14" - <module> - WARNING - this is warning
+2025-09-16 18:24:55 - ApiTestLog - "D:\workdir\DjangoProject3\API_TEST_FRAME\samples\log_demo_nb.py:15" - <module> - ERROR - this is error
+2025-09-16 18:24:55 - ApiTestLog - "D:\workdir\DjangoProject3\API_TEST_FRAME\samples\log_demo_nb.py:16" - <module> - CRITICAL - this is critical
+2025-09-16 18:24:55 - ApiTestLog - "D:\workdir\DjangoProject3\API_TEST_FRAME\samples\log_demo_nb.py:17" - <module> - ERROR - this is exception
+NoneType: None

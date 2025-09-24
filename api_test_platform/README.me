@@ -1,0 +1,38 @@
+API_TEST_FRAME/
+├─ api_platform/          # Django项目根目录（新增）
+│  ├─ api_platform/       # 项目配置目录
+│  │  ├─ __init__.py
+│  │  ├─ asgi.py
+│  │  ├─ settings.py      # 项目配置（集成原有config）
+│  │  ├─ urls.py          # 主路由
+│  │  └─ wsgi.py
+│  ├─ api_auto/           # 接口自动化APP（核心功能模块，新增）
+│  │  ├─ __init__.py
+│  │  ├─ admin.py
+│  │  ├─ apps.py
+│  │  ├─ migrations/      # 数据库迁移文件
+│  │  ├─ models.py        # 数据模型（映射原有MySQL表）
+│  │  ├─ forms.py         # Excel上传表单
+│  │  ├─ views.py         # 视图逻辑（导入、执行、列表、详情）
+│  │  ├─ urls.py          # 接口自动化路由
+│  │  ├─ templates/       # 前端模板
+│  │  │  └─ api_auto/
+│  │  │     ├─ index.html # 首页（接口/UI/造数入口）
+│  │  │     ├─ import_excel.html # Excel导入页面
+│  │  │     ├─ case_list.html # 用例列表页面
+│  │  │     └─ case_detail.html # 用例详情页面
+│  │  └─ static/          # 静态资源（CSS/JS）
+│  ├─ ui_auto/            # UI自动化APP（待开发，新增）
+│  │  └─ ...
+│  ├─ data_maker/         # 平台造数APP（入口，待开发，新增）
+│  │  └─ ...
+│  └─ manage.py           # Django管理脚本
+├─ common/                # 原有公共工具模块（复用）
+├─ api_testcase/          # 原有接口测试模块（复用）
+├─ config/                # 原有配置文件（复用）
+├─ log/                   # 原有日志目录（复用）
+├─ tests_report/          # 原有测试报告目录（复用）
+├─ test_data/             # 原有测试数据目录（复用，Excel导入目标目录）
+├─ test_runner/           # 原有测试运行模块（复用，调用run_case.py）
+├─ mysql/                 # 原有MySQL脚本（复用）
+└─ nb_log_config.py       # 原有日志配置（复用）

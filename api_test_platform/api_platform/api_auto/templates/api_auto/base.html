@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}接口自动化平台{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --primary-color: #4e73df;
+            --hover-color: rgba(78, 115, 223, 0.1);
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            width: var(--sidebar-width);
+            background: linear-gradient(180deg, #4e73df 0%, #224abe 100%);
+            padding-top: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
+
+        .sidebar-brand {
+            height: 4.375rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 800;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            letter-spacing: 0.05rem;
+            color: #fff;
+        }
+
+        .sidebar-divider {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            margin: 1rem 0;
+        }
+
+        .sidebar .nav-item .nav-link {
+            position: relative;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 0.35rem;
+            transition: all 0.3s;
+        }
+
+        .sidebar .nav-item .nav-link:hover {
+            color: #fff;
+            background-color: var(--hover-color);
+        }
+
+        .sidebar .nav-item .nav-link.active {
+            color: #fff;
+            background-color: var(--hover-color);
+        }
+
+        .sidebar .nav-item .nav-link i {
+            margin-right: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 2rem;
+            min-height: 100vh;
+            background-color: #f8f9fc;
+            transition: all 0.3s;
+        }
+
+        .back-to-home {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.3);
+            transition: all 0.3s;
+        }
+
+        .back-to-home:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="sidebar">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <div class="sidebar-brand-icon">
+                <i class="bi bi-robot"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">接口自动化平台</div>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-speedometer2"></i>
+                    <span>仪表盘</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-plug"></i>
+                    <span>接口管理</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'api_auto:case_list' %}">
+                    <i class="bi bi-list-check"></i>
+                    <span>用例列表</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-gear"></i>
+                    <span>环境配置</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-sliders"></i>
+                    <span>系统设置</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <a href="/" class="back-to-home" title="返回首页">
+        <i class="bi bi-house-door-fill" style="font-size: 1.2rem;"></i>
+    </a>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

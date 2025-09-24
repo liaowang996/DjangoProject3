@@ -1,0 +1,131 @@
+{% extends "api_auto/base_home.html" %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+        color: white;
+        padding: 5rem 0;
+        margin-bottom: 3rem;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    [data-bs-theme="dark"] .hero-section {
+        background: linear-gradient(135deg, #4a50b5 0%, #0008cc 100%);
+    }
+
+    .feature-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        height: 100%;
+        background-color: var(--bs-body-bg);
+    }
+
+    [data-bs-theme="dark"] .feature-card {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--bs-primary);
+    }
+
+    .card-body {
+        padding: 2rem;
+        background-color: var(--bs-body-bg);
+    }
+
+    .btn-feature {
+        border-radius: 50px;
+        padding: 0.5rem 1.5rem;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    [data-bs-theme="dark"] .text-muted {
+        color: #adb5bd !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container text-center">
+        <h1 class="display-3 fw-bold mb-4">测试自动化平台</h1>
+        <p class="lead mb-5">一站式解决方案，提升您的测试效率</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row g-4">
+        <!-- 接口测试 -->
+        <div class="col-md-4">
+            <div class="feature-card card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-plug feature-icon"></i>
+                    <h3 class="h4">接口测试</h3>
+                    <p class="text-muted mb-4">管理并执行HTTP接口自动化测试用例，支持RESTful和GraphQL</p>
+                    <a href="{% url 'api_auto:case_list' %}" class="btn btn-primary btn-feature">
+                        开始使用 <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UI测试 -->
+        <div class="col-md-4">
+            <div class="feature-card card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-display feature-icon"></i>
+                    <h3 class="h4">UI测试</h3>
+                    <p class="text-muted mb-4">基于Selenium的Web UI自动化测试（开发中）</p>
+                    <button class="btn btn-outline-secondary btn-feature" disabled>
+                        即将推出 <i class="bi bi-hourglass ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 测试数据 -->
+        <div class="col-md-4">
+            <div class="feature-card card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-database feature-icon"></i>
+                    <h3 class="h4">测试数据</h3>
+                    <p class="text-muted mb-4">生成和管理测试数据，支持多种数据格式（开发中）</p>
+                    <button class="btn btn-outline-secondary btn-feature" disabled>
+                        即将推出 <i class="bi bi-hourglass ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 卡片悬停效果
+document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+    });
+});
+</script>
+{% endblock %}

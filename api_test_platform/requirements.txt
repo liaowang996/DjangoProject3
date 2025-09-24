@@ -1,0 +1,13 @@
+jsonpath==0.82.2
+nb_log==13.9
+openpyxl==3.1.5
+paramunittest==0.2
+psutil==7.0.0
+pymysql==1.1.2
+python_json_logger==0.1.10
+Requests==2.32.5
+xlrd==1.2.0
+xlutils==2.0.0
+django-crispy-forms==2.1 # 表单美化
+crispy-bootstrap5==2024.1 # Bootstrap5支持
+django-pagination==1.0.7 # 分页插件

@@ -142,11 +142,43 @@ class SqlUtils():
         '''
         return self.execute_query(sql_str)
 
+    def get_mysql_test_single_case_info(self,ids):
+        """获取MySQL中的测试用例信息"""
+        sql_str = '''
+            SELECT
+                b.case_id AS '测试用例编号',
+                b.is_run AS '是否执行',
+                a.part_name AS '模块名称',
+                b.case_name AS '测试用例名称',
+                a.case_step_name AS '测试用例步骤',
+                c.api_name AS '接口名称',
+                c.api_request_type AS '请求方式',
+                c.api_request_url AS '请求地址',
+                c.api_url_params AS '请求参数(get)',
+                c.api_post_data AS '提交数据(post)',
+                a.get_value_type AS '取值方式',
+                a.variable_name AS '传值变量',
+                a.get_value_code AS '取值代码',
+                a.excepted_result_type AS '期望结果类型',
+                a.excepted_result AS '期望结果',
+                a.is_pass   AS '是否通过'
+            FROM
+                case_step_info a
+                LEFT JOIN case_info b ON a.CaseStepInfo_id = b.CaseInfo_id
+                LEFT JOIN api_info c ON a.api_id = c.api_id
+            WHERE
+                a.CaseStepInfo_id = '''+"'"+str(ids)+"'"+'''
+            ORDER BY
+                a.part_name,
+                b.case_id,
+            a.case_step_name;
+        '''
+        return self.execute_query(sql_str)
 
 if __name__ == '__main__':
     try:
         sql_utils = SqlUtils()
-        test_cases = sql_utils.get_mysql_test_case_info()
+        test_cases = sql_utils.get_mysql_test_single_case_info('43bc9d6031')
         print(test_cases)
         logger.info(f"从数据库获取到 {len(test_cases)} 条测试用例")
 
