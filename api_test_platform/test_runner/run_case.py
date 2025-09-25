@@ -61,7 +61,7 @@ class RunCase():
             case_list = testdata_utils.def_testcase_data_list_by_mysql()
             logger.info(case_list)
             # 3. 筛选用例（如果指定了用例ID）
-            filtered_cases = ['43bc9d6031']
+            filtered_cases = []
             logger.info(filtered_cases)
             if single_case_id:
                 # 单条执行：筛选CaseStepInfo_id匹配的用例

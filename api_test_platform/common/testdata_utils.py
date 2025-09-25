@@ -10,46 +10,46 @@ current_path = os.path.dirname(__file__)
 test_data_path = os.path.abspath(os.path.join(current_path, '..', config.CASE_DATA_PATH))
 
 # 2. 强制关闭占用文件的进程（全局方法）
-def force_close_file(file_path):
-    file_path = os.path.abspath(file_path)
-    for proc in psutil.process_iter(['pid', 'name', 'open_files']):
-        try:
-            for file in proc.info['open_files'] or []:
-                if os.path.abspath(file.path) == file_path:
-                    print(f"强制关闭占用进程：{proc.info['name']} (PID: {proc.info['pid']})")
-                    proc.terminate()
-                    proc.wait(timeout=2)
-                    return True
-        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-            continue
-    return False
+# def force_close_file(file_path):
+#     file_path = os.path.abspath(file_path)
+#     for proc in psutil.process_iter(['pid', 'name', 'open_files']):
+#         try:
+#             for file in proc.info['open_files'] or []:
+#                 if os.path.abspath(file.path) == file_path:
+#                     print(f"强制关闭占用进程：{proc.info['name']} (PID: {proc.info['pid']})")
+#                     proc.terminate()
+#                     proc.wait(timeout=2)
+#                     return True
+#         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+#             continue
+#     return False
 
 class TestdataUtils():
     def __init__(self, test_data_path=test_data_path):
         # 初始化前先释放文件占用
-        force_close_file(test_data_path)
+        # force_close_file(test_data_path)
         self.test_data_path = test_data_path
-        self.test_data_sheet = ExcelUtils(test_data_path, 'Sheet1')
-        self.test_data = self.test_data_sheet.read_multiple_excel_cases()
+        # self.test_data_sheet = ExcelUtils(test_data_path, 'Sheet1')
+        # self.test_data = self.test_data_sheet.read_multiple_excel_cases()
         self.sql_utils = SqlUtils()
         self.test_data_by_mysql = self.sql_utils.get_mysql_test_case_info()
 
     # 处理 Excel 数据（只筛选“用例执行=是”的用例）
-    def __get_testcase_data_dict(self):
-        testcase_dict = {}
-        for row_data in self.test_data:
-            if row_data['用例执行'] == '是':
-                testcase_dict.setdefault(row_data['模块名称']+'_'+row_data['测试用例编号'], []).append(row_data)
-
-        logger.info(testcase_dict)
-        return testcase_dict
-
-    def def_testcase_data_list(self):
-        testcase_list = []
-        for case_id, case_info in self.__get_testcase_data_dict().items():
-            testcase_list.append({'case_id': case_id, 'case_info': case_info})
-        logger.info(testcase_list)
-        return tuple(testcase_list)
+    # def __get_testcase_data_dict(self):
+    #     testcase_dict = {}
+    #     for row_data in self.test_data:
+    #         if row_data['用例执行'] == '是':
+    #             testcase_dict.setdefault(row_data['模块名称']+'_'+row_data['测试用例编号'], []).append(row_data)
+    #
+    #     logger.info(testcase_dict)
+    #     return testcase_dict
+    #
+    # def def_testcase_data_list(self):
+    #     testcase_list = []
+    #     for case_id, case_info in self.__get_testcase_data_dict().items():
+    #         testcase_list.append({'case_id': case_id, 'case_info': case_info})
+    #     logger.info(testcase_list)
+    #     return tuple(testcase_list)
 
     # 处理数据库数据
     def __get_testcase_data_dict_by_mysql(self):
@@ -131,7 +131,7 @@ if __name__ == '__main__':
 
         # 读取所有Excel文件中的用例
         testdata_utils = TestdataUtils()
-        all_test_cases = testdata_utils.def_testcase_data_list_by_mysql()
+        all_test_cases = testdata_utils.get_single_testcase('ce264c759d')
         print(all_test_cases)
 
     except Exception as e:

@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5396ad0-b80e-46ff-96a5-d3f3d47dd9ab" name="Changes" comment="1.一站式自动化平台">
+    <list default="true" id="e5396ad0-b80e-46ff-96a5-d3f3d47dd9ab" name="Changes" comment="1.新增环境配置页">
+      <change afterPath="$PROJECT_DIR$/../API_TEST_FRAME/samples/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/case_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/case_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_platform/api_auto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_platform/api_auto/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/requests_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/requests_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/testdata_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/testdata_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/2025-09-23.0001.ApitTest_2025_09_23.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/run_case.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_reports/接口自动化测试报告_20250923201905/接口自动化测试报告.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_runner/run_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_runner/run_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_runner/run_single_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_runner/run_single_case.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +65,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "Django Server.api_test_platform.executor": "Run",
     "Python tests.Python tests in api_test.py.executor": "Run",
+    "Python.requests_utils.executor": "Run",
     "Python.run_case.executor": "Run",
     "Python.sql_utils.executor": "Run",
     "Python.test.executor": "Run",
@@ -83,7 +94,30 @@
       <recent name="D:\workdir\DjangoProject3\api_test_platform\test_runner" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run_case">
+  <component name="RunManager" selected="Python tests.Python tests in api_test.py">
+    <configuration name="requests_utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="api_test_platform" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/requests_utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="run_case" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="api_test_platform" />
       <option name="ENV_FILES" value="" />
@@ -130,29 +164,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="api_test_platform" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sample" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sample/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="testdata_utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="api_test_platform" />
       <option name="ENV_FILES" value="" />
@@ -168,29 +179,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/testdata_utils.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="api_test_platform" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api_platform/api_auto" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api_platform/api_auto/tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -223,13 +211,29 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in api_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="api_test_platform" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api_testcase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/api_testcase/api_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in api_test.py" />
+        <item itemvalue="Python.testdata_utils" />
+        <item itemvalue="Python.requests_utils" />
         <item itemvalue="Python.run_case" />
         <item itemvalue="Python.sql_utils" />
-        <item itemvalue="Python.testdata_utils" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.tests" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +255,7 @@
       <updated>1758522891762</updated>
       <workItem from="1758522892849" duration="14192000" />
       <workItem from="1758546219706" duration="26381000" />
-      <workItem from="1758689005799" duration="3452000" />
+      <workItem from="1758689005799" duration="25395000" />
     </task>
     <task id="LOCAL-00001" summary="1.一站式自动化平台">
       <option name="closed" value="true" />
@@ -269,7 +273,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758689394397</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.新增环境配置页">
+      <option name="closed" value="true" />
+      <created>1758692790881</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758692790881</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1.新增环境配置页">
+      <option name="closed" value="true" />
+      <created>1758692797999</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758692797999</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,13 +297,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.一站式自动化平台" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.一站式自动化平台" />
+    <MESSAGE value="1.新增环境配置页" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.新增环境配置页" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/api_test_platform$test.coverage" NAME="test Coverage Results" MODIFIED="1758607417855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sample" />
-    <SUITE FILE_PATH="coverage/api_test_platform$.coverage" NAME=" Coverage Results" MODIFIED="1758604148586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api_testcase" />
+    <SUITE FILE_PATH="coverage/api_test_platform$.coverage" NAME=" Coverage Results" MODIFIED="1758772779890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api_testcase" />
     <SUITE FILE_PATH="coverage/api_test_platform$tests.coverage" NAME="tests Coverage Results" MODIFIED="1758607183809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api_platform/api_auto" />
-    <SUITE FILE_PATH="coverage/api_test_platform$testdata_utils.coverage" NAME="testdata_utils Coverage Results" MODIFIED="1758609753048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/api_test_platform$requests_utils.coverage" NAME="requests_utils Coverage Results" MODIFIED="1758703601855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/api_test_platform$testdata_utils.coverage" NAME="testdata_utils Coverage Results" MODIFIED="1758767953345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/api_test_platform$sql_utils.coverage" NAME="sql_utils Coverage Results" MODIFIED="1758610962540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/api_test_platform$run_case.coverage" NAME="run_case Coverage Results" MODIFIED="1758613837733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_runner" />
   </component>

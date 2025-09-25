@@ -31,27 +31,33 @@ class RunSingleCase:
         return generate_test_suite([case_info])
 
     def run(self):
-        """执行单条用例并生成报告"""
+        """执行单条用例并返回结果"""
         logger.info(f"开始执行单条用例, case_step_id={self.case_step_id}")
         try:
             test_suite = self.get_test_suite()
-            report_file = os.path.join(self.test_report_root,
-                                     f"单条用例报告_{self.case_step_id}.html")
-            logger.debug(f"测试报告将保存至: {report_file}")
+            runner = unittest.TextTestRunner()
+            result = runner.run(test_suite)
 
-            with open(report_file, 'wb') as fp:
-                runner = HTMLTestReportCN.HTMLTestRunner(
-                    stream=fp,
-                    title=f'单条用例测试报告 - {self.case_step_id}',
-                    tester='自动化测试'
-                )
-                result = runner.run(test_suite)
-
-            return {
-                'status': 'success',
-                'report_file': report_file,
-                'case_count': result.testsRun
-            }
+            # 解析执行结果
+            if result.wasSuccessful():
+                return {
+                    'status': 'success',
+                    'case_id': self.case_step_id,
+                    'passed': True,
+                    'details': '测试用例执行通过'
+                }
+            else:
+                return {
+                    'status': 'fail',
+                    'case_id': self.case_step_id,
+                    'passed': False,
+                    'details': result.failures[0][1] if result.failures else '未知错误'
+                }
         except Exception as e:
             logger.error(f"单条用例执行失败: {str(e)}", exc_info=True)
-            return {'status': 'error', 'message': str(e)}
+            return {
+                'status': 'error',
+                'case_id': self.case_step_id,
+                'passed': False,
+                'details': str(e)
+            }

@@ -17,4 +17,9 @@ urlpatterns = [
     path('config/edit/', views.config_edit, name='config_edit'),
     path('config/edit/<int:config_id>/', views.config_edit, name='config_edit'),
     path('config/delete/<int:config_id>/', views.config_delete, name='config_delete'),
+    # 接口管理相关路由
+    path('api-management/', views.api_management, name='api_management'),
+    path('api-management/add/', views.api_management_add, name='api_management_add'),
+    path('api-management/edit/<str:case_step_id>/', views.api_management_edit, name='api_management_edit'),
+    path('api-management/delete/<str:case_step_id>/', views.api_management_delete, name='api_management_delete'),
 ]
