@@ -1,0 +1,100 @@
+{% extends "api_auto/base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5>{{ title }}</h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="row mb-4">
+                <h6 class="text-primary">基础信息</h6>
+                <div class="col-md-4">
+                    <label class="form-label">测试用例编号</label>
+                    {{ form.case_id }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">测试用例名称</label>
+                    {{ form.case_name }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">是否执行</label>
+                    {{ form.is_run }}
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label class="form-label">模块名称</label>
+                    {{ form.part_name }}
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">测试用例步骤</label>
+                    {{ form.case_step_name }}
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <h6 class="text-primary">接口信息</h6>
+                <div class="col-md-4">
+                    <label class="form-label">接口名称</label>
+                    {{ form.api_name }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">请求方式</label>
+                    {{ form.api_request_type }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">请求地址</label>
+                    {{ form.api_request_url }}
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label class="form-label">请求参数(get)</label>
+                    {{ form.api_url_params }}
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">提交数据(post)</label>
+                    {{ form.api_post_data }}
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <h6 class="text-primary">测试步骤信息</h6>
+                <div class="col-md-4">
+                    <label class="form-label">取值方式</label>
+                    {{ form.get_value_type }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">传值变量</label>
+                    {{ form.variable_name }}
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">期望结果类型</label>
+                    {{ form.excepted_result_type }}
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label class="form-label">期望结果</label>
+                    {{ form.excepted_result }}
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">取值代码</label>
+                    {{ form.get_value_code }}
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">保存</button>
+                <a href="{% url 'api_auto:api_management' %}" class="btn btn-secondary">取消</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

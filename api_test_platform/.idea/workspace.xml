@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5396ad0-b80e-46ff-96a5-d3f3d47dd9ab" name="Changes" comment="1.新增环境配置页">
-      <change afterPath="$PROJECT_DIR$/../API_TEST_FRAME/samples/test.py" afterDir="false" />
+    <list default="true" id="e5396ad0-b80e-46ff-96a5-d3f3d47dd9ab" name="Changes" comment="1.接口测试结果写入到mysql数据库中">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/case_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/templates/api_auto/case_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_platform/api_auto/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_platform/api_auto/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/requests_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/requests_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/testdata_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/testdata_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/2025-09-23.0001.ApitTest_2025_09_23.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/run_case.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_reports/接口自动化测试报告_20250923201905/接口自动化测试报告.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_runner/run_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_runner/run_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_runner/run_single_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_runner/run_single_case.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +241,7 @@
       <updated>1758522891762</updated>
       <workItem from="1758522892849" duration="14192000" />
       <workItem from="1758546219706" duration="26381000" />
-      <workItem from="1758689005799" duration="25395000" />
+      <workItem from="1758689005799" duration="27170000" />
     </task>
     <task id="LOCAL-00001" summary="1.一站式自动化平台">
       <option name="closed" value="true" />
@@ -289,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758692797999</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1.接口测试结果写入到mysql数据库中">
+      <option name="closed" value="true" />
+      <created>1758786342792</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758786342792</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +292,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.一站式自动化平台" />
     <MESSAGE value="1.新增环境配置页" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.新增环境配置页" />
+    <MESSAGE value="1.接口测试结果写入到mysql数据库中" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.接口测试结果写入到mysql数据库中" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/api_test_platform$test.coverage" NAME="test Coverage Results" MODIFIED="1758607417855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sample" />
